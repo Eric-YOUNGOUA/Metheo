@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Section de recherche de ville (reste en haut) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/cityEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Entrez une ville"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords"
+            android:maxLines="1" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chercher" />
+    </LinearLayout>
+
+    <!-- Conteneur principal qui divise l'écran en deux -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <!-- Colonne de gauche : Infos principales -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:text="Nom de la Ville" />
+
+            <TextView
+                android:id="@+id/weatherDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="18sp"
+                tools:text="Description du temps" />
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="45sp"
+                android:textStyle="bold"
+                tools:text="20°C" />
+
+            <TextView
+                android:id="@+id/tempMinMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Max: 22°C Min: 18°C" />
+
+        </LinearLayout>
+
+        <!-- Colonne de droite : Détails dans la grille -->
+        <GridLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1.2"
+            android:columnCount="2"
+            android:rowCount="5"
+            android:useDefaultMargins="true">
+
+            <!-- Ligne 1: Coordonnées -->
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="end"
+                android:text="Coordonnées:"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/coordinates"
+                android:layout_columnWeight="1"
+                tools:text="Lat: 45.5, Lon: -73.5" />
+
+            <!-- Ligne 2: Humidité -->
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="end"
+                android:text="Humidité:"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_columnWeight="1"
+                tools:text="50%" />
+
+            <!-- Ligne 3: Pression -->
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="end"
+                android:text="Pression:"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/pressure"
+                android:layout_columnWeight="1"
+                tools:text="1012 hPa" />
+
+            <!-- Ligne 4: Vitesse du vent -->
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="end"
+                android:text="Vitesse du vent:"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/windSpeed"
+                android:layout_columnWeight="1"
+                tools:text="15 km/h" />
+
+            <!-- Ligne 5: Direction du vent -->
+            <TextView
+                android:layout_columnWeight="1"
+                android:gravity="end"
+                android:text="Direction du vent:"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/windDirection"
+                android:layout_columnWeight="1"
+                tools:text="270° (Ouest)" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

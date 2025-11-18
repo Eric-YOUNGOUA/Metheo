@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <!-- Section de recherche de ville -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <EditText
+            android:id="@+id/cityEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Entrez une ville"
+            android:inputType="textCapWords"
+            android:maxLines="1"/>
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chercher"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        tools:text="Ville" />
+
+    <TextView
+        android:id="@+id/weatherDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        tools:text="Description du temps" />
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        tools:text="20°C" />
+
+    <TextView
+        android:id="@+id/tempMinMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        tools:text="Max: 22°C Min: 18°C" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:columnCount="2"
+        android:rowCount="5"
+        android:useDefaultMargins="true">
+
+        <!-- Ligne 1: Coordonnées -->
+        <TextView android:text="Coordonnées:" android:textStyle="bold"/>
+        <TextView android:id="@+id/coordinates" tools:text="Lat: 45.5, Lon: -73.5"/>
+
+        <!-- Ligne 2: Humidité -->
+        <TextView android:text="Humidité:" android:textStyle="bold"/>
+        <TextView android:id="@+id/humidity" tools:text="50%"/>
+
+        <!-- Ligne 3: Pression -->
+        <TextView android:text="Pression:" android:textStyle="bold"/>
+        <TextView android:id="@+id/pressure" tools:text="1012 hPa"/>
+
+        <!-- Ligne 4: Vitesse du vent -->
+        <TextView android:text="Vitesse du vent:" android:textStyle="bold"/>
+        <TextView android:id="@+id/windSpeed" tools:text="15 km/h"/>
+
+        <!-- Ligne 5: Direction du vent -->
+        <TextView android:text="Direction du vent:" android:textStyle="bold"/>
+        <TextView android:id="@+id/windDirection" tools:text="270° (Ouest)"/>
+
+    </GridLayout>
+
+    <ImageView
+        android:id="@+id/coq"
+        android:layout_width="212dp"
+        android:layout_height="195dp"
+        app:srcCompat="@drawable/img" />
+
+    <TextView
+        android:id="@+id/coach"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="casual"
+        android:lineSpacingExtra="20sp"
+        android:text="Welcome Méthéo"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+</LinearLayout>
